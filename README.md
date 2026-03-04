@@ -2,7 +2,7 @@
 
 A wall-mountable illuminated sign that automatically lights up when your favourite Twitch streamer goes live. Built around an **Adafruit QT Py ESP32-S3**, two **NeoPixel 8-LED sticks**, and a 3D printed enclosure with swappable face plates.
 
-🖨️ **3D model files & print settings: [MakerWorld Stream Sign]([https://makerworld.com](https://makerworld.com/en/models/2479420-streaming-sign#profileId-2723293)**
+🖨️ **3D model files & print settings: [MakerWorld Stream Sign](https://makerworld.com/en/models/2479420-streaming-sign#profileId-2723293)**
 
 ---
 
