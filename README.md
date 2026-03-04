@@ -33,20 +33,34 @@ A wall-mountable illuminated sign that automatically lights up when your favouri
 
 ## 🔌 Wiring
 
+Each NeoPixel stick has pads on both sides:
+
 ```
-QT Py ESP32-S3
-│
-├── 5V  ──── NeoPixel Stick 1 (5V in)
-│            NeoPixel Stick 2 (5V in)
-│
-├── GND ──── NeoPixel Stick 1 (GND)
-│            NeoPixel Stick 2 (GND)
-│
-└── A2  ──── NeoPixel Stick 1 (DIN)
-                  └─── NeoPixel Stick 2 (DIN)  ← daisy-chain
+RIGHT side (input):   GND · VDC · DIN · GND
+LEFT side  (output):  GND · VDC · DOUT · GND
 ```
 
-The two NeoPixel sticks are daisy-chained: data out of stick 1 goes into data in of stick 2, giving 16 addressable LEDs on a single pin (`A2` by default, configurable in `neopixel_config.py`).
+### Connection overview
+
+Physical layout left to right: **NeoPixel Stick 2 → NeoPixel Stick 1 → QT Py ESP32-S3**
+
+```
+NeoPixel Stick 2              NeoPixel Stick 1             QT Py ESP32-S3
+┌────────────────────┐       ┌─────────────────────┐         ┌────────┐
+│  LEFT       RIGHT  │       │  LEFT       RIGHT   │         │        │
+│                    │       │                     │         │        │
+│  GND     ┌──GND ───┼───────┼─ GND     ┌──GND ────┼─────────┼─ GND   │
+│  VDC     │  VDC ───┼───────┼─ VDC     │  VDC ────┼─────────┼─ 5V    │
+│  DOUT    │  DIN ───┼───────┼─ DOUT    │  DIN ────┼─────────┼─ A2    │
+│  GND     └──GND    │       │  GND     └──GND     │         │        │
+└────────────────────┘       └─────────────────────┘         └────────┘
+```
+
+### Notes
+
+- The two GND pads on the **right side** of each stick are bridged together with a short wire or solder bridge
+- Power and data enter each stick on the **right side** (DIN, VDC) and exit on the **left side** (DOUT, VDC)
+- Stick 2's left-side pads (DOUT, VDC, GND) are unused and can be left unconnected
 
 ---
 
