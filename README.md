@@ -68,7 +68,7 @@ NeoPixel Stick 2              NeoPixel Stick 1             QT Py ESP32-S3
 
 ### Prerequisites
 
-- [CircuitPython](https://circuitpython.org/) installed on the QT Py ESP32-S3
+- [CircuitPython for Adafruit QT Py ESP32-S3](https://circuitpython.org/board/adafruit_qtpy_esp32s3_nopsram/) installed on the QT Py ESP32-S3
 - The following CircuitPython libraries placed in your `lib/` folder:
   - `neopixel`
   - `adafruit_requests`
