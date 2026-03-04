@@ -166,7 +166,7 @@ The code uses the **Twitch Helix API** with App Access Tokens — no user login 
 1. On boot, the QT Py connects to WiFi via `wifi_handler.py`
 2. It authenticates with the Twitch API via `twitch_auth.py` (App Access Token flow)
 3. Every 60 seconds, `twitch_handler.py` checks whether the target streamer is live
-4. **If live:** `neopixel_light_handler.py` fades the LEDs in to full brightness
+4. **If live:** `neopixel_light_handler.py` fades the LEDs in to the set brightness
 5. **If offline:** LEDs fade out and turn off
 6. If Domoticz is enabled, `domoticz_handler.py` updates the virtual device state
 
